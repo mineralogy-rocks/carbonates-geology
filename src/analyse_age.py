@@ -80,6 +80,19 @@ plt.savefig(f"data/output/plots/mineral_max_age.jpeg", dpi=300, format='jpeg')
 plt.close()
 
 
+rarity_stats = rarity_groups.groupby('rarity_group').agg(mineral_count=pd.NamedAgg(column="mineral_name", aggfunc="count"))
+rarity_stats['percentage_from_carbonates'] = rarity_stats.mineral_count / np.sum(rarity_stats.mineral_count) * 100
+rarity_stats['percentage_from_all'] = np.nan
+rarity_stats.loc[rarity_stats.index == 'Endemic', 'percentage_from_all'] = \
+    rarity_stats.loc[rarity_stats.index == 'Endemic', 'mineral_count'] / 1232 * 100
+rarity_stats.loc[rarity_stats.index == 'Generally Rare', 'percentage_from_all'] = \
+    rarity_stats.loc[rarity_stats.index == 'Generally Rare', 'mineral_count'] / 4018 * 100
+rarity_stats.loc[rarity_stats.index == 'Transitional', 'percentage_from_all'] = \
+    rarity_stats.loc[rarity_stats.index == 'Transitional', 'mineral_count'] / 2153 * 100
+rarity_stats.loc[rarity_stats.index == 'Ubiquitous', 'percentage_from_all'] = \
+    rarity_stats.loc[rarity_stats.index == 'Ubiquitous', 'mineral_count'] / 701 * 100
+rarity_stats.to_csv('data/output/data/rarity_stats.csv')
+
 stats = pd.DataFrame(mineral_age.groupby('mineral')['mineral'].count())
 stats.rename(columns={'mineral': 'counts'}, inplace=True)
 stats.sort_values('counts', ascending=False, inplace=True)
