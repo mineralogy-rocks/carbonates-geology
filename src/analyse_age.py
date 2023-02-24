@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 from src.connectors import Connection
 from src.utils import (
-    parse_mindat, split_by_rarity_groups, classify_by_rarity
+    parse_mindat, classify_by_rarity
 )
 
 api = Connection()
@@ -21,6 +21,8 @@ mineral = pd.read_csv('data/input/tbl_mineral.csv', sep='\t', index_col='mineral
 localities = pd.read_csv('data/input/mindat_locs.csv')
 locality_age = pd.read_csv('data/input/tbl_locality_age_cache.csv', error_bad_lines=False, encoding='unicode_escape',
                            sep='\t', index_col='mindat_id')
+_locality_age = pd.read_csv('data/input/tbl_locality_age_cache_alt.csv', error_bad_lines=False, encoding='unicode_escape',
+                            sep='\t', index_col='mindat_id')
 
 mineral = mineral.merge(api.carbonates_mindat, how='inner', left_on='mineral_name', right_on='name')
 mineral.set_index('id', inplace=True)
@@ -41,6 +43,19 @@ med.sort_index(inplace=True)
 mineral_age = med.merge(locality_age, how='inner', left_index=True, right_index=True)
 mineral_age.drop_duplicates(subset=['mineral', 'max_age', 'min_age'], inplace=True)
 mineral_age.sort_values('mineral', inplace=True)
+
+# Before 3000 Ma
+age_gte_3000 = mineral_age[mineral_age.max_age >= 3000]
+age_gte_3000.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
+                                    max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
+
+_locality_age.drop_duplicates(subset=['dated_locality_mindat_id'], inplace=True)
+_locality_age = _locality_age.loc[_locality_age.at_locality == 1]
+_locality_age = _locality_age[['dated_locality_mindat_id', 'dated_locality_longname']]
+_age_gte_3000 = age_gte_3000.merge(_locality_age, how='inner', left_on='mindat_id', right_on='dated_locality_mindat_id')
+_age_gte_3000 = _age_gte_3000[['mineral', 'max_age', 'min_age', 'dated_locality_longname']]
+_age_gte_3000.sort_values('dated_locality_longname', inplace=True)
+_age_gte_3000.to_csv('data/output/data/age_gte_3000.csv', sep='\t', index=False)
 
 localities = localities.merge(mineral, how='inner', left_index=True, right_on='mineral_name')
 rarity_groups = classify_by_rarity(localities)
