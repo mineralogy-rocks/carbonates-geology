@@ -1,166 +1,166 @@
-mineral	min_age	max_age
-Abellaite	0.0	0.0
-Albrechtschraufite	0.0	0.0
-Alstonite	100.0	415.0
-Alumohydrocalcite	33.9	372.0
-Ancylite-(Ce)	28.7	506.0
-Ancylite-(La)	300.0	485.0
-Andersonite	0.0	399.0
-Ankerite	0.0	506.0
-Aragonite	0.0	534.0
-Arisite-(Ce)	31.8	32.2
-Arisite-(La)	31.8	32.2
-Artinite	440.0	483.0
-Aurichalcite	1.1	534.0
-Azurite	0.0	534.0
-Barytocalcite	19.0	500.0
-Bayleyite	0.0	400.0
-Benstonite	126.0	485.0
-Beyerite	5.0	397.0
-Bismutite	0.0	488.0
-Blatonite	200.0	251.0
-Bonshtedtite	370.7	500.0
-Bradleyite	66.0	390.0
-Brianyoungite	133.1	274.0
-Brugnatellite	440.0	440.0
-Burbankite	30.0	410.0
-Calcioancylite-(Ce)	31.8	506.0
-Calcioancylite-(Nd)	0.0	514.0
-Calcioburbankite	219.0	402.0
-Calcite	0.0	534.0
-Calkinsite-(Ce)	3.0	402.0
-Carbocernaite	2.58	485.0
-Cebaite-(Ce)	450.0	510.0
-Cerussite	0.0	534.0
-Chalconatronite	0.0	340.0
-Chlorartinite	0.0	3.6e-05
-Chlormagaluminite	135.0	238.0
-Chukanovite	0.005	0.008
-Claraite	110.0	387.0
-Clearcreekite	0.0	5.3
-Coalingite	440.0	440.0
-Cordylite-(Ce)	31.8	485.0
-Cordylite-(La)	300.0	485.0
-Daqingshanite-(Ce)	2.58	485.0
-Dawsonite	0.0	488.3
-Decrespignyite-(Y)	0.0	514.0
-Dolomite	0.0	534.0
-Donnayite-(Y)	0.0	514.0
-Dresserite	117.0	139.0
-Dundasite	0.0117	520.0
-Dypingite	0.0	444.0
-Eitelite	45.1	361.0
-Ewaldite	358.0	402.0
-Fairchildite	0.0	190.0
-Ferrotychite	66.0	145.0
-Fontanite	103.0	179.0
-Gaylussite	0.0	413.6
-Giorgiosite	419.0	444.0
-Gregoryite	0.0	190.0
-Hellyerite	0.0117	2.58
-Huanghoite-(Ce)	71.9	485.0
-Huntite	0.0	365.0
-Hydrocerussite	0.0	488.3
-Hydrodresserite	117.0	488.3
-Hydromagnesite	0.0	510.0
-Hydrotalcite	0.0117	483.0
-Hydrozincite	0.0	534.0
-Ikaite	0.001	259.0
-Indigirite	148.7	151.1
-Juangodoyite	100.0	174.0
-Kalicinite	0.0	413.6
-Kamotoite-(Y)	145.0	358.9
-Kamphaugite-(Y)	0.0	514.0
-Kettnerite	145.0	326.4
-Khanneshite	360.9	500.0
-Kimuraite-(Y)	393.0	419.0
-Kozoite-(La)	31.8	32.2
-Kukharenkoite-(Ce)	300.0	485.0
-Kutnohorite	0.0	445.0
-Lansfordite	0.0	35.0
-Lanthanite-(Ce)	30.0	331.0
-Lanthanite-(Nd)	60.8	419.0
-Leadhillite	2.6	520.0
-Lecoqite-(Y)	0.0	252.0
-Liebigite	0.7	326.4
-Lusernaite-(Y)	35.0	40.0
-Macphersonite	366.0	391.0
-Magnesite	0.0	510.0
-Malachite	0.0	534.0
-Manganotychite	361.0	363.0
-Markeyite	0.0	0.0
-Marklite	145.0	358.9
-Mcguinnessite	315.2	323.2
-Mckelveyite-(Y)	66.0	415.0
-Meyrowitzite	0.0	0.0
-Mineevite-(Y)	361.0	363.0
-Minrecordite	13.8	350.0
-Monohydrocalcite	0.0	387.0
-Montroyalite	117.0	488.3
-Nahcolite	0.0	488.3
-Natrite	0.0	363.0
-Natromarkeyite	0.0	0.0
-Natron	0.006	201.6
-Nesquehonite	0.0	238.0
-Norsethite	24.1	485.0
-Northupite	0.0008	352.0
-Nullaginite	0.0	65.0
-Nyerereite	0.0	439.7
-Olekminskite	66.0	415.0
-Oswaldpeetersite	200.0	251.0
-Otavite	5.3	48.8
-Otwayite	0.0	65.0
-Paralstonite	342.0	415.0
-Paratooite-(La)	0.0	514.0
-Parisite-(Ce)	14.0	506.0
-Peterbaylissite	0.0	5.3
-Petterdite	358.9	419.2
-Phosgenite	5.3	520.0
-Pirssonite	0.0	363.0
-Plumbonacrite	2.6	387.0
-Pseudomarkeyite	0.0	0.0
-Pyroaurite	135.0	510.0
-Qaqarssukite-(Ce)	162.0	183.0
-Quintinite	125.0	250.0
-Rabbittite	291.0	356.0
-Reevesite	0.0	416.0
-Rhodochrosite	0.0	500.0
-Rosasite	1.1	534.0
-Rouvilleite	153.6	363.0
-Rutherfordine	0.14	358.9
-Sabinaite	117.0	488.3
-Sahamalite-(Ce)	0.3	0.3
-Scarbroite	0.0	2.58
-Shannonite	16.0	21.0
-Shortite	0.0	402.0
-Siderite	0.0	530.0
-Smithsonite	0.0	534.0
-Somersetite	200.0	260.0
-Spherocobaltite	69.9	223.0
-Stichtite	13.0	419.2
-Strontianite	0.0	488.3
-Strontiodresserite	117.0	488.3
-Susannite	0.0	391.0
-Swartzite	68.2	70.4
-Synchysite-(Ce)	0.0	514.0
-Synchysite-(Nd)	3.0	28.0
-Synchysite-(Y)	3.0	390.0
-Takovite	145.0	358.9
-Tengerite-(Y)	0.0	514.0
-Teschemacherite	0.0	0.0
-Thermonatrite	0.0	201.6
-Trona	0.0	352.0
-Tychite	0.0245	5.0
-Urancalcarite	103.0	430.0
-Vaterite	0.4	413.6
-Wegscheiderite	359.0	418.0
-Weloganite	117.0	488.3
-Widenmannite	185.0	272.1
-Widgiemoolthalite	0.0	0.0
-Witherite	0.0	474.0
-Wyartite	15.97	305.0
-Zabuyelite	0.0008	511.9
-Zaratite	0.0	510.0
-Zellerite	73.0	430.0
-Zemkorite	89.49	352.0
-Zincrosasite	2.6	358.9
+mineral,min_age,max_age
+Abellaite,0.0,0.0
+Albrechtschraufite,0.0,0.0
+Alstonite,100.0,415.0
+Alumohydrocalcite,33.9,372.0
+Ancylite-(Ce),28.7,506.0
+Ancylite-(La),300.0,485.0
+Andersonite,0.0,399.0
+Ankerite,0.0,506.0
+Aragonite,0.0,534.0
+Arisite-(Ce),31.8,32.2
+Arisite-(La),31.8,32.2
+Artinite,440.0,483.0
+Aurichalcite,1.1,534.0
+Azurite,0.0,534.0
+Barytocalcite,19.0,500.0
+Bayleyite,0.0,400.0
+Benstonite,126.0,485.0
+Beyerite,5.0,397.0
+Bismutite,0.0,488.0
+Blatonite,200.0,251.0
+Bonshtedtite,370.7,500.0
+Bradleyite,66.0,390.0
+Brianyoungite,133.1,274.0
+Brugnatellite,440.0,440.0
+Burbankite,30.0,410.0
+Calcioancylite-(Ce),31.8,506.0
+Calcioancylite-(Nd),0.0,514.0
+Calcioburbankite,219.0,402.0
+Calcite,0.0,534.0
+Calkinsite-(Ce),3.0,402.0
+Carbocernaite,2.58,485.0
+Cebaite-(Ce),450.0,510.0
+Cerussite,0.0,534.0
+Chalconatronite,0.0,340.0
+Chlorartinite,0.0,3.6e-05
+Chlormagaluminite,135.0,238.0
+Chukanovite,0.005,0.008
+Claraite,110.0,387.0
+Clearcreekite,0.0,5.3
+Coalingite,440.0,440.0
+Cordylite-(Ce),31.8,485.0
+Cordylite-(La),300.0,485.0
+Daqingshanite-(Ce),2.58,485.0
+Dawsonite,0.0,488.3
+Decrespignyite-(Y),0.0,514.0
+Dolomite,0.0,534.0
+Donnayite-(Y),0.0,514.0
+Dresserite,117.0,139.0
+Dundasite,0.0117,520.0
+Dypingite,0.0,444.0
+Eitelite,45.1,361.0
+Ewaldite,358.0,402.0
+Fairchildite,0.0,190.0
+Ferrotychite,66.0,145.0
+Fontanite,103.0,179.0
+Gaylussite,0.0,413.6
+Giorgiosite,419.0,444.0
+Gregoryite,0.0,190.0
+Hellyerite,0.0117,2.58
+Huanghoite-(Ce),71.9,485.0
+Huntite,0.0,365.0
+Hydrocerussite,0.0,488.3
+Hydrodresserite,117.0,488.3
+Hydromagnesite,0.0,510.0
+Hydrotalcite,0.0117,483.0
+Hydrozincite,0.0,534.0
+Ikaite,0.001,259.0
+Indigirite,148.7,151.1
+Juangodoyite,100.0,174.0
+Kalicinite,0.0,413.6
+Kamotoite-(Y),145.0,358.9
+Kamphaugite-(Y),0.0,514.0
+Kettnerite,145.0,326.4
+Khanneshite,360.9,500.0
+Kimuraite-(Y),393.0,419.0
+Kozoite-(La),31.8,32.2
+Kukharenkoite-(Ce),300.0,485.0
+Kutnohorite,0.0,445.0
+Lansfordite,0.0,35.0
+Lanthanite-(Ce),30.0,331.0
+Lanthanite-(Nd),60.8,419.0
+Leadhillite,2.6,520.0
+Lecoqite-(Y),0.0,252.0
+Liebigite,0.7,326.4
+Lusernaite-(Y),35.0,40.0
+Macphersonite,366.0,391.0
+Magnesite,0.0,510.0
+Malachite,0.0,534.0
+Manganotychite,361.0,363.0
+Markeyite,0.0,0.0
+Marklite,145.0,358.9
+Mcguinnessite,315.2,323.2
+Mckelveyite-(Y),66.0,415.0
+Meyrowitzite,0.0,0.0
+Mineevite-(Y),361.0,363.0
+Minrecordite,13.8,350.0
+Monohydrocalcite,0.0,387.0
+Montroyalite,117.0,488.3
+Nahcolite,0.0,488.3
+Natrite,0.0,363.0
+Natromarkeyite,0.0,0.0
+Natron,0.006,201.6
+Nesquehonite,0.0,238.0
+Norsethite,24.1,485.0
+Northupite,0.0008,352.0
+Nullaginite,0.0,65.0
+Nyerereite,0.0,439.7
+Olekminskite,66.0,415.0
+Oswaldpeetersite,200.0,251.0
+Otavite,5.3,48.8
+Otwayite,0.0,65.0
+Paralstonite,342.0,415.0
+Paratooite-(La),0.0,514.0
+Parisite-(Ce),14.0,506.0
+Peterbaylissite,0.0,5.3
+Petterdite,358.9,419.2
+Phosgenite,5.3,520.0
+Pirssonite,0.0,363.0
+Plumbonacrite,2.6,387.0
+Pseudomarkeyite,0.0,0.0
+Pyroaurite,135.0,510.0
+Qaqarssukite-(Ce),162.0,183.0
+Quintinite,125.0,250.0
+Rabbittite,291.0,356.0
+Reevesite,0.0,416.0
+Rhodochrosite,0.0,500.0
+Rosasite,1.1,534.0
+Rouvilleite,153.6,363.0
+Rutherfordine,0.14,358.9
+Sabinaite,117.0,488.3
+Sahamalite-(Ce),0.3,0.3
+Scarbroite,0.0,2.58
+Shannonite,16.0,21.0
+Shortite,0.0,402.0
+Siderite,0.0,530.0
+Smithsonite,0.0,534.0
+Somersetite,200.0,260.0
+Spherocobaltite,69.9,223.0
+Stichtite,13.0,419.2
+Strontianite,0.0,488.3
+Strontiodresserite,117.0,488.3
+Susannite,0.0,391.0
+Swartzite,68.2,70.4
+Synchysite-(Ce),0.0,514.0
+Synchysite-(Nd),3.0,28.0
+Synchysite-(Y),3.0,390.0
+Takovite,145.0,358.9
+Tengerite-(Y),0.0,514.0
+Teschemacherite,0.0,0.0
+Thermonatrite,0.0,201.6
+Trona,0.0,352.0
+Tychite,0.0245,5.0
+Urancalcarite,103.0,430.0
+Vaterite,0.4,413.6
+Wegscheiderite,359.0,418.0
+Weloganite,117.0,488.3
+Widenmannite,185.0,272.1
+Widgiemoolthalite,0.0,0.0
+Witherite,0.0,474.0
+Wyartite,15.97,305.0
+Zabuyelite,0.0008,511.9
+Zaratite,0.0,510.0
+Zellerite,73.0,430.0
+Zemkorite,89.49,352.0
+Zincrosasite,2.6,358.9

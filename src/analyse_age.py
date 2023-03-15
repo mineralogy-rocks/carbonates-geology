@@ -40,8 +40,8 @@ archean = archean[['mineral', 'min_age', 'max_age', 'locality_longname', 'rarity
                                                                                                           'min_age','max_age'])
 archean_report = archean.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
                                                 max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
-archean.to_csv('data/output/data/mineral_locality_archean.csv', sep='\t', encoding='utf-8')
-archean_report.to_csv('data/output/data/mineral_locality_archean_summary.csv', sep='\t', encoding='utf-8')
+archean.to_csv('data/output/data/mineral_locality_archean.csv', sep=',', encoding='utf-8')
+archean_report.to_csv('data/output/data/mineral_locality_archean_summary.csv', sep=',', encoding='utf-8')
 
 # mineral/locality Proterozoic
 proterozoic = mineral_locality_tuple[(mineral_locality_tuple.max_age >= 538) & (mineral_locality_tuple.max_age < 2500)]
@@ -50,8 +50,8 @@ proterozoic = proterozoic[['mineral', 'min_age', 'max_age', 'locality_longname',
                                                                                                                   'max_age'])
 proterozoic_report = proterozoic.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
                                                         max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
-proterozoic.to_csv('data/output/data/mineral_locality_proterozoic.csv', sep='\t', encoding='utf-8')
-proterozoic_report.to_csv('data/output/data/mineral_locality_proterozoic_summary.csv', sep='\t', encoding='utf-8')
+proterozoic.to_csv('data/output/data/mineral_locality_proterozoic.csv', sep=',', encoding='utf-8')
+proterozoic_report.to_csv('data/output/data/mineral_locality_proterozoic_summary.csv', sep=',', encoding='utf-8')
 
 # mineral/locality Phanerozoic
 phanerozoic = mineral_locality_tuple[(mineral_locality_tuple.max_age >= 0) & (mineral_locality_tuple.max_age < 538)]
@@ -60,8 +60,8 @@ phanerozoic = phanerozoic[['mineral', 'min_age', 'max_age', 'locality_longname',
                                                                                                                   'max_age'])
 phanerozoic_report = phanerozoic.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
                                                         max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
-phanerozoic.to_csv('data/output/data/mineral_locality_phanerozoic.csv', sep='\t', encoding='utf-8')
-phanerozoic_report.to_csv('data/output/data/mineral_locality_phanerozoic_summary.csv', sep='\t', encoding='utf-8')
+phanerozoic.to_csv('data/output/data/mineral_locality_phanerozoic.csv', sep=',', encoding='utf-8')
+phanerozoic_report.to_csv('data/output/data/mineral_locality_phanerozoic_summary.csv', sep=',', encoding='utf-8')
 
 
 sns.set_theme(style="ticks")

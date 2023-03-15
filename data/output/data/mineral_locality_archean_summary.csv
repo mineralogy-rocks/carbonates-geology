@@ -1,42 +1,42 @@
-mineral	min_age	max_age
-Ancylite-(Ce)	541.0	2500.0
-Ankerite	541.0	4000.0
-Aragonite	0.0	4700.0
-Azurite	0.0	4000.0
-Bijvoetite-(Y)	2587.0	2615.0
-Bismutite	19.0	3026.0
-Calcite	0.0	4700.0
-Cerussite	65.0	3640.0
-Coalingite	2700.0	2710.0
-Dolomite	0.0	4700.0
-Gaylussite	66.0	2647.0
-Glaukosphaerite	2701.0	2900.0
-Huntite	0.0	2709.0
-Hydrocerussite	470.0	2500.0
-Hydrozincite	1600.0	2500.0
-Kambaldaite	2701.0	2709.0
-Leadhillite	470.0	2500.0
-Magnesite	0.0	3100.0
-Malachite	0.0	4000.0
-Monohydrocalcite	0.0	2500.0
-Nahcolite	66.0	2647.0
-Northupite	66.0	2647.0
-Nullaginite	2701.0	2709.0
-Olekminskite	541.0	2500.0
-Otwayite	2700.0	2710.0
-Parisite-(Ce)	541.0	2500.0
-Phosgenite	65.0	3350.0
-Pirssonite	66.0	2647.0
-Putnisite	2701.0	2709.0
-Pyroaurite	2703.0	2710.0
-Reevesite	0.0	4620.0
-Rhodochrosite	541.0	3411.0
-Rosasite	65.0	3350.0
-Siderite	0.0	4000.0
-Smithsonite	1.5	3200.0
-Stichtite	2703.0	3100.0
-Strontianite	541.0	2615.0
-Takovite	2701.0	2709.0
-Thermonatrite	66.0	2647.0
-Zabuyelite	2110.0	2644.0
-Zaratite	3100.0	3100.0
+mineral,min_age,max_age
+Ancylite-(Ce),541.0,2500.0
+Ankerite,541.0,4000.0
+Aragonite,0.0,4700.0
+Azurite,0.0,4000.0
+Bijvoetite-(Y),2587.0,2615.0
+Bismutite,19.0,3026.0
+Calcite,0.0,4700.0
+Cerussite,65.0,3640.0
+Coalingite,2700.0,2710.0
+Dolomite,0.0,4700.0
+Gaylussite,66.0,2647.0
+Glaukosphaerite,2701.0,2900.0
+Huntite,0.0,2709.0
+Hydrocerussite,470.0,2500.0
+Hydrozincite,1600.0,2500.0
+Kambaldaite,2701.0,2709.0
+Leadhillite,470.0,2500.0
+Magnesite,0.0,3100.0
+Malachite,0.0,4000.0
+Monohydrocalcite,0.0,2500.0
+Nahcolite,66.0,2647.0
+Northupite,66.0,2647.0
+Nullaginite,2701.0,2709.0
+Olekminskite,541.0,2500.0
+Otwayite,2700.0,2710.0
+Parisite-(Ce),541.0,2500.0
+Phosgenite,65.0,3350.0
+Pirssonite,66.0,2647.0
+Putnisite,2701.0,2709.0
+Pyroaurite,2703.0,2710.0
+Reevesite,0.0,4620.0
+Rhodochrosite,541.0,3411.0
+Rosasite,65.0,3350.0
+Siderite,0.0,4000.0
+Smithsonite,1.5,3200.0
+Stichtite,2703.0,3100.0
+Strontianite,541.0,2615.0
+Takovite,2701.0,2709.0
+Thermonatrite,66.0,2647.0
+Zabuyelite,2110.0,2644.0
+Zaratite,3100.0,3100.0
