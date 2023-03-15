@@ -20,8 +20,6 @@ def parse_mindat(data):
 
     data.rename(columns={'loccount': 'locality_counts'}, inplace=True)
 
-    ## Don't have any clue why mindat keeps `0` in imayear column and mixes dtypes in others (?!)
-
     data['imayear'].replace('0', np.nan, inplace=True)
 
     locs_md = data[['name', 'imayear', 'yeardiscovery', 'yearrruff', 'locality_counts']]

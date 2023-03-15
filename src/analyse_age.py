@@ -16,65 +16,68 @@ api.fetch_tables()
 api.get_minerals()
 api.disconnect_db()
 
-med = pd.read_csv('data/input/MED_export.csv', sep='\t')
-mineral = pd.read_csv('data/input/tbl_mineral.csv', sep='\t', index_col='mineral_id')
 localities = pd.read_csv('data/input/mindat_locs.csv')
-locality_age = pd.read_csv('data/input/tbl_locality_age_cache.csv', error_bad_lines=False, encoding='unicode_escape',
-                           sep='\t', index_col='mindat_id')
-_locality_age = pd.read_csv('data/input/tbl_locality_age_cache_alt.csv', error_bad_lines=False, encoding='unicode_escape',
+localities = parse_mindat(localities)
+_locality_age = pd.read_csv('data/input/tbl_locality_age_cache_alt.csv', on_bad_lines='skip', encoding='unicode_escape',
                             sep='\t', index_col='mindat_id')
 
-mineral = mineral.merge(api.carbonates_mindat, how='inner', left_on='mineral_name', right_on='name')
-mineral.set_index('id', inplace=True)
-
-localities = parse_mindat(localities)
-
-locality_age = locality_age.loc[(~locality_age.max_age.isna()) | (~locality_age.min_age.isna())]
-locality_age.sort_index(inplace=True)
-
-med = med[med.bottom_level == 1]
-med['mineral'] = med['MED_minerals_all'].str.split(',')
-med = med.explode('mineral')
-med = med[['mindat_id', 'mineral',]]
-med = med.merge(mineral, how='inner', left_on='mineral', right_on='mineral_name')
-med.set_index('mindat_id', inplace=True)
-med.sort_index(inplace=True)
-
-mineral_age = med.merge(locality_age, how='inner', left_index=True, right_index=True)
-mineral_age.drop_duplicates(subset=['mineral', 'max_age', 'min_age'], inplace=True)
-mineral_age.sort_values('mineral', inplace=True)
-
-# Before 3000 Ma
-age_gte_3000 = mineral_age[mineral_age.max_age >= 3000]
-age_gte_3000.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
-                                    max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
-
-_locality_age.drop_duplicates(subset=['dated_locality_mindat_id'], inplace=True)
 _locality_age = _locality_age.loc[_locality_age.at_locality == 1]
-_locality_age = _locality_age[['dated_locality_mindat_id', 'dated_locality_longname']]
-_age_gte_3000 = age_gte_3000.merge(_locality_age, how='inner', left_on='mindat_id', right_on='dated_locality_mindat_id')
-_age_gte_3000 = _age_gte_3000[['mineral', 'max_age', 'min_age', 'dated_locality_longname']]
-_age_gte_3000.sort_values('dated_locality_longname', inplace=True)
-_age_gte_3000.to_csv('data/output/data/age_gte_3000.csv', sep='\t', index=False)
+_locality_age = _locality_age.loc[_locality_age.is_remote == 0]
+mineral_locality_tuple = _locality_age.merge(api.carbonates_mindat, how='inner', left_on='mineral_display_name',
+                                             right_on='name')
+mineral_locality_tuple.rename(columns={'mineral_display_name': 'mineral'}, inplace=True)
+mineral_locality_tuple.set_index('id', inplace=True)
 
-localities = localities.merge(mineral, how='inner', left_index=True, right_on='mineral_name')
 rarity_groups = classify_by_rarity(localities)
 del localities
 
-mineral_age = mineral_age.merge(rarity_groups, how='left', left_on='mineral_name', right_on='mineral_name')
+mineral_locality_tuple = mineral_locality_tuple.merge(rarity_groups[['rarity_group']], how='left', left_on='mineral',
+                                                      right_index=True)
+
+# mineral/locality Archean
+archean = mineral_locality_tuple[mineral_locality_tuple.max_age >= 2500]
+archean = archean[['mineral', 'min_age', 'max_age', 'locality_longname', 'rarity_group']].sort_values(by=['mineral',
+                                                                                                          'min_age','max_age'])
+archean_report = archean.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
+                                                max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
+archean.to_csv('data/output/data/mineral_locality_archean.csv', sep='\t', encoding='utf-8')
+archean_report.to_csv('data/output/data/mineral_locality_archean_summary.csv', sep='\t', encoding='utf-8')
+
+# mineral/locality Proterozoic
+proterozoic = mineral_locality_tuple[(mineral_locality_tuple.max_age >= 538) & (mineral_locality_tuple.max_age < 2500)]
+proterozoic = proterozoic[['mineral', 'min_age', 'max_age', 'locality_longname', 'rarity_group']].sort_values(by=['mineral',
+                                                                                                                  'min_age',
+                                                                                                                  'max_age'])
+proterozoic_report = proterozoic.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
+                                                        max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
+proterozoic.to_csv('data/output/data/mineral_locality_proterozoic.csv', sep='\t', encoding='utf-8')
+proterozoic_report.to_csv('data/output/data/mineral_locality_proterozoic_summary.csv', sep='\t', encoding='utf-8')
+
+# mineral/locality Phanerozoic
+phanerozoic = mineral_locality_tuple[(mineral_locality_tuple.max_age >= 0) & (mineral_locality_tuple.max_age < 538)]
+phanerozoic = phanerozoic[['mineral', 'min_age', 'max_age', 'locality_longname', 'rarity_group']].sort_values(by=['mineral',
+                                                                                                                  'min_age',
+                                                                                                                  'max_age'])
+phanerozoic_report = phanerozoic.groupby('mineral').agg(min_age=pd.NamedAgg(column="min_age", aggfunc="min"),
+                                                        max_age=pd.NamedAgg(column="max_age", aggfunc="max"))
+phanerozoic.to_csv('data/output/data/mineral_locality_phanerozoic.csv', sep='\t', encoding='utf-8')
+phanerozoic_report.to_csv('data/output/data/mineral_locality_phanerozoic_summary.csv', sep='\t', encoding='utf-8')
+
 
 sns.set_theme(style="ticks")
 fig, ax = plt.subplots(figsize=(7, 5), dpi=300)
 sns.despine(fig)
 
 g = sns.histplot(
-    mineral_age,
+    mineral_locality_tuple.sort_values(by='rarity_group'),
     x="max_age",
     hue='rarity_group',
     palette="rocket",
     edgecolor=".3",
     ax=ax,
     linewidth=.5,
+    binwidth=30,
+    multiple="stack",
 )
 g.legend_.set_title('Rarity Groups')
 plt.xlabel('Age (Ma)')
@@ -82,7 +85,7 @@ plt.ylabel('Mineral count')
 
 ax_ = ax.twinx()
 sns.kdeplot(
-    data=mineral_age,
+    data=mineral_locality_tuple,
     x="max_age",
     palette=['darkblue',],
     ax=ax_,
@@ -91,7 +94,7 @@ sns.kdeplot(
 )
 ax.invert_xaxis()
 plt.axis('off')
-plt.savefig(f"data/output/plots/mineral_max_age.jpeg", dpi=300, format='jpeg')
+plt.savefig(f"data/output/plots/timeline.jpeg", dpi=300, format='jpeg')
 plt.close()
 
 
