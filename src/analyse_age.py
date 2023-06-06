@@ -34,6 +34,11 @@ del localities
 mineral_locality_tuple = mineral_locality_tuple.merge(rarity_groups[['rarity_group']], how='left', left_on='mineral',
                                                       right_index=True)
 
+# subset rarity by carbonates only and find top 10 most common
+carbonates_rarity = rarity_groups.loc[rarity_groups.index.isin(mineral_locality_tuple.mineral.values)]
+carbonates_rarity.sort_values(by='locality_counts', ascending=False, inplace=True)
+print(carbonates_rarity.head(10))
+
 # mineral/locality Archean
 archean = mineral_locality_tuple[mineral_locality_tuple.max_age >= 2500]
 archean = archean[['mineral', 'min_age', 'max_age', 'locality_longname', 'rarity_group']].sort_values(by=['mineral',
@@ -96,6 +101,36 @@ ax.invert_xaxis()
 plt.axis('off')
 plt.savefig(f"data/output/plots/timeline.jpeg", dpi=300, format='jpeg')
 plt.close()
+
+
+# timeline faceted for top 10 most common carbonates
+_data = mineral_locality_tuple[mineral_locality_tuple.mineral.isin(carbonates_rarity.head(10).index.values)]
+_minerals = _data["mineral"].unique()[:10]
+_minerals.sort()
+
+sns.set_theme(style="ticks")
+fig, axes = plt.subplots(nrows=2, ncols=5, figsize=(20, 10), dpi=300)
+sns.despine(fig)
+
+for i, _mineral in enumerate(_minerals):
+    ax = axes[i // 5, i % 5]
+    data_subset = _data[_data["mineral"] == _mineral]
+    g = sns.histplot(data_subset, x="max_age", ax=ax, color="skyblue", edgecolor=".3", linewidth=.2, binwidth=30)
+    g.set(xticks=np.arange(0, 4600, 1000))
+    ax.invert_xaxis()
+    ax.set_xlabel("")
+    if i // 5 == 1:
+        ax.set_xlabel("Age (Ma)")
+    if i % 5 == 0:
+        ax.set_ylabel("Mineral count")
+    else:
+        ax.set_ylabel("")
+    ax.set_title(_mineral)
+
+plt.tight_layout()
+plt.savefig("data/output/plots/timeline-top-10.jpeg", dpi=300, format='jpeg')
+plt.close()
+
 
 
 rarity_stats = rarity_groups.groupby('rarity_group').agg(mineral_count=pd.NamedAgg(column="mineral_name", aggfunc="count"))
