@@ -69,6 +69,87 @@ phanerozoic.to_csv('data/output/data/mineral_locality_phanerozoic.csv', sep=',',
 phanerozoic_report.to_csv('data/output/data/mineral_locality_phanerozoic_summary.csv', sep=',', encoding='utf-8')
 
 
+# Load data from local pre-processed files
+archean = pd.read_csv('data/output/data/mineral_locality_archean.csv', sep=',', encoding='utf-8')
+proterozoic = pd.read_csv('data/output/data/mineral_locality_proterozoic.csv', sep=',', encoding='utf-8')
+phanerozoic = pd.read_csv('data/output/data/mineral_locality_phanerozoic.csv', sep=',', encoding='utf-8')
+
+
+# Archean timeline grouped by rarity
+sns.set_theme(style="ticks")
+fig, axes = plt.subplots(nrows=1, ncols=3, figsize=(10, 5), dpi=300)
+sns.despine(fig)
+
+for i, rarity_group in enumerate(archean.rarity_group.unique()):
+    ax = axes[i]
+    data_subset = archean[archean["rarity_group"] == rarity_group]
+    g = sns.histplot(data_subset, x="max_age", ax=ax, color="darkslateblue", edgecolor=".3", linewidth=.2, binwidth=50)
+    g.set(xticks=np.arange(2500, 4600, 500))
+    ax.yaxis.set_major_locator(mpl.ticker.MaxNLocator(integer=True))
+    ax.invert_xaxis()
+    if i == 0:
+        ax.set_ylabel("Mineral count")
+    else:
+        ax.set_ylabel("")
+    if i == 1:
+        ax.set_xlabel("Age (Ma)")
+    else:
+        ax.set_xlabel("")
+    ax.set_title(rarity_group)
+
+plt.tight_layout()
+plt.savefig("data/output/plots/timeline_archean_by_rarity.jpeg", dpi=300, format='jpeg')
+
+
+# Proterozoic timeline grouped by rarity
+sns.set_theme(style="ticks")
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10), dpi=300)
+sns.despine(fig)
+
+for i, rarity_group in enumerate(proterozoic.rarity_group.unique()):
+    ax = axes[i // 2, i % 2]
+    data_subset = proterozoic[proterozoic["rarity_group"] == rarity_group]
+    g = sns.histplot(data_subset, x="max_age", ax=ax, color="darkslateblue", edgecolor=".3", linewidth=.2, binwidth=30)
+    g.set(xticks=np.arange(0, 2500, 500))
+    ax.yaxis.set_major_locator(mpl.ticker.MaxNLocator(integer=True))
+    ax.invert_xaxis()
+    ax.set_xlabel("")
+    if i // 2 == 1:
+        ax.set_xlabel("Age (Ma)")
+    if i % 2 == 0:
+        ax.set_ylabel("Mineral count")
+    else:
+        ax.set_ylabel("")
+    ax.set_title(rarity_group)
+
+plt.tight_layout()
+plt.savefig("data/output/plots/timeline_proterozoic_by_rarity.jpeg", dpi=300, format='jpeg')
+
+# Phanerozic timeline grouped by rarity
+sns.set_theme(style="ticks")
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10), dpi=300)
+sns.despine(fig)
+
+for i, rarity_group in enumerate(phanerozoic.rarity_group.unique()):
+    ax = axes[i // 2, i % 2]
+    data_subset = phanerozoic[phanerozoic["rarity_group"] == rarity_group]
+    g = sns.histplot(data_subset, x="max_age", ax=ax, color="darkslateblue", edgecolor=".3", linewidth=.2, binwidth=10)
+    g.set(xticks=np.arange(0, 538, 100))
+    ax.yaxis.set_major_locator(mpl.ticker.MaxNLocator(integer=True))
+    ax.invert_xaxis()
+    ax.set_xlabel("")
+    if i // 2 == 1:
+        ax.set_xlabel("Age (Ma)")
+    if i % 2 == 0:
+        ax.set_ylabel("Mineral count")
+    else:
+        ax.set_ylabel("")
+    ax.set_title(rarity_group)
+
+plt.tight_layout()
+plt.savefig("data/output/plots/timeline_phanerozoic_by_rarity.jpeg", dpi=300, format='jpeg')
+
+
 sns.set_theme(style="ticks")
 fig, ax = plt.subplots(figsize=(7, 5), dpi=300)
 sns.despine(fig)
