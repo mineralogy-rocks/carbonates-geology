@@ -29,7 +29,11 @@ mineral_locality_tuple.rename(columns={'mineral_display_name': 'mineral'}, inpla
 mineral_locality_tuple.set_index('id', inplace=True)
 
 rarity_groups = classify_by_rarity(localities)
+rarity_groups = rarity_groups.loc[rarity_groups.index.isin(api.carbonates_mindat.name.values)]
 del localities
+
+rarity_groups = pd.read_csv('data/output/data/rarity_groups.csv', index_col='name')
+
 
 mineral_locality_tuple = mineral_locality_tuple.merge(rarity_groups[['rarity_group']], how='left', left_on='mineral',
                                                       right_index=True)
@@ -38,6 +42,9 @@ mineral_locality_tuple = mineral_locality_tuple.merge(rarity_groups[['rarity_gro
 carbonates_rarity = rarity_groups.loc[rarity_groups.index.isin(mineral_locality_tuple.mineral.values)]
 carbonates_rarity.sort_values(by='locality_counts', ascending=False, inplace=True)
 print(carbonates_rarity.head(10))
+
+# find top-10 most endemic minerals discovered before 2000
+_temp = rarity_groups.loc[(rarity_groups.rarity_group == 'Endemic') & (rarity_groups.discovery_year < 2000)]
 
 # mineral/locality Archean
 archean = mineral_locality_tuple[mineral_locality_tuple.max_age >= 2500]
@@ -213,7 +220,7 @@ plt.savefig("data/output/plots/timeline-top-10.jpeg", dpi=300, format='jpeg')
 plt.close()
 
 
-
+rarity_groups['mineral_name'] = rarity_groups.index
 rarity_stats = rarity_groups.groupby('rarity_group').agg(mineral_count=pd.NamedAgg(column="mineral_name", aggfunc="count"))
 rarity_stats['percentage_from_carbonates'] = rarity_stats.mineral_count / np.sum(rarity_stats.mineral_count) * 100
 rarity_stats['percentage_from_all'] = np.nan
