@@ -18,6 +18,10 @@ periods = (
     ('Phanerozoic', phanerozoic)
 )
 
+_counts = phanerozoic[phanerozoic.mineral.isin(choices.TOP_10_CARBONATES)].sort_values(by='mineral')
+_counts = _counts.groupby(['mineral', 'max_age']).size().reset_index(name='counts').sort_values(by='max_age')
+_counts.to_csv('data/output/data/top-10-carbonates-phanerozoic.csv', sep=',', encoding='utf-8', index=False)
+
 # single bar chart per period: counts of top-10 carbonates
 for name, period in periods:
     _counts = period[period.mineral.isin(choices.TOP_10_CARBONATES)].sort_values(by='mineral')
