@@ -159,7 +159,31 @@ g = sns.barplot(
 )
 plt.xlabel('')
 plt.ylabel('Percentage (%)')
-# plt.legend(handles=g.legend_.legendHandles, labels=choices.TOP_10_CARBONATES, fontsize='small', fancybox=False, framealpha=0.2, loc='upper left')
 plt.tight_layout()
 ax.set_title(f"Average percentage of top-10 carbonates per period", fontsize='small')
 plt.savefig(f"data/output/plots/top-10-proportions-per-period.jpeg", dpi=300, format='jpeg')
+
+
+# Single line chart showing the proportion of Calcite/Dolomite through whole perios
+_all = pd.concat([archean, proterozoic, phanerozoic])
+_all = _all[_all.mineral.isin(['Calcite', 'Dolomite'])].sort_values(by='mineral')
+_all = _all.groupby(['max_age', 'mineral']).size().reset_index(name='counts').sort_values(by='mineral')
+_all['proportion'] = _all.groupby('max_age')['counts'].apply(lambda x: x / float(x.sum())) * 100
+_all = _all.groupby('max_age').filter(lambda x: len(x) == 2)
+_all = _all.loc[(_all['mineral'] == 'Calcite') & (_all['counts'] > 1)]
+
+sns.set_theme(style="ticks")
+fig, ax = plt.subplots(figsize=(12, 6), dpi=300)
+sns.despine(fig)
+g = sns.regplot(
+    data=_all,
+    x="max_age",
+    y="proportion",
+    order=2
+)
+plt.xlabel('Age (Ma)')
+plt.ylabel('Calcite/Dolomite (%)')
+plt.tight_layout()
+ax.invert_xaxis()
+ax.set_title(f"Average percentage of Calcite/Dolomite through whole period", fontsize='small')
+plt.savefig(f"data/output/plots/calcite-dolomite-proportions.jpeg", dpi=300, format='jpeg')
