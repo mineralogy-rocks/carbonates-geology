@@ -25,3 +25,10 @@ _ = archean.loc[archean['rarity_group'] == 'Generally Rare']
 _ = phanerozoic.loc[phanerozoic['rarity_group'] == 'Endemic']
 _ = proterozoic.loc[proterozoic['rarity_group'] == 'Endemic']
 
+
+# Get data for timeline, sum window by 30Ma
+timeline = pd.concat([archean, proterozoic, phanerozoic])
+timeline = timeline.groupby(['max_age']).size().reset_index(name='counts')
+timeline['max_age'] = timeline['max_age'].apply(lambda x: int(x/30)*30)
+timeline = timeline.groupby(['max_age']).sum().reset_index()
+timeline.to_csv('data/output/data/timeline.csv', sep=',', encoding='utf-8')
