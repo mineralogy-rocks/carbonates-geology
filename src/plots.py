@@ -187,3 +187,34 @@ plt.tight_layout()
 ax.invert_xaxis()
 ax.set_title(f"Average percentage of Calcite/Dolomite through whole period", fontsize='small')
 plt.savefig(f"data/output/plots/calcite-dolomite-proportions.jpeg", dpi=300, format='jpeg')
+
+
+
+# full timeline for all minerals
+_data = pd.read_csv('data/input/tbl_locality_age_cache_alt.csv', on_bad_lines='skip', encoding='unicode_escape',
+                            sep='\t', index_col='mindat_id')
+
+_data = _data.loc[_data.at_locality == 1]
+_data = _data.loc[_data.is_remote == 0]
+_data.rename(columns={'mineral_display_name': 'mineral'}, inplace=True)
+
+sns.set_theme(style="ticks")
+fig, ax = plt.subplots(figsize=(12, 6), dpi=300)
+sns.despine(fig)
+g = sns.histplot(
+    data=_data,
+    x="max_age",
+    palette="Paired",
+    edgecolor=".3",
+    ax=ax,
+    linewidth=.5,
+    binwidth=30,
+    multiple="stack",
+)
+
+plt.xlabel('Age (Ma)')
+plt.ylabel('Mineral counts')
+plt.tight_layout()
+ax.invert_xaxis()
+ax.set_title(f"Counts of all minerals", fontsize='small')
+plt.savefig(f"data/output/plots/timeline-all.jpeg", dpi=300, format='jpeg')
