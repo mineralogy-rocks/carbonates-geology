@@ -2,6 +2,8 @@
 import pandas as pd
 import numpy as np
 
+from sklearn.ensemble import IsolationForest
+
 
 def prepare_minerals(minerals):
     minerals_ = minerals.copy()
@@ -48,4 +50,14 @@ def classify_by_rarity(data):
 
     data.loc[(data['locality_counts'] > 70), 'rarity_group'] = 'Ubiquitous'
 
+    return data
+
+
+def get_outliers(data, colname, threshold=500):
+    ISO_FOREST = IsolationForest(contamination=0.1, random_state=42)
+
+    _vector = data[colname].values.reshape(-1, 1)
+    data['is_outlier'] = ISO_FOREST.fit_predict(_vector)
+    data['is_outlier'].replace({ 1: False, -1: True }, inplace=True)
+    data['is_outlier'] = (data['max_age'] - data['min_age']) > threshold
     return data

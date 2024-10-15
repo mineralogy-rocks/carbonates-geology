@@ -218,3 +218,62 @@ plt.tight_layout()
 ax.invert_xaxis()
 ax.set_title(f"Counts of all minerals", fontsize='small')
 plt.savefig(f"data/output/plots/timeline-all.jpeg", dpi=300, format='jpeg')
+
+
+
+def timeline(data, colname, figname, configs={ 'binwidth': 30 }):
+    # single timeline with rarity stacked bars
+    outlier_colname = 'is_outlier'
+
+    sns.set_theme(style="ticks")
+    fig, ax = plt.subplots(figsize=(7, 5), dpi=300)
+    sns.despine(fig)
+
+    _min, _max = data[colname].min(), data[colname].max()
+
+    # Outliers (in the background)
+    _outliers = data[data[outlier_colname]]
+    sns.histplot(
+        _outliers,
+        x=colname,
+        color='grey',
+        edgecolor="black",
+        ax=ax,
+        linewidth=0.1,
+        alpha=0.3,
+        binrange=(_min, _max),
+        **configs
+    )
+
+    # Reliable data without outliers (in the foreground)
+    _data = data[~data[outlier_colname]]
+    g_regular = sns.histplot(
+        _data.sort_values(by='rarity_group'),
+        x=colname,
+        hue='rarity_group',
+        palette="rocket",
+        edgecolor="black",
+        linewidth=0.2,
+        ax=ax,
+        multiple="stack",
+        binrange=(_min, _max),
+        **configs
+    )
+    g_regular.legend_.set_title('Rarity Groups')
+
+    plt.xlabel('Age (Ma)')
+    plt.ylabel('Mineral count')
+
+    ax_ = ax.twinx()
+    sns.kdeplot(
+        data=_data,
+        x=colname,
+        color='darkblue',
+        ax=ax_,
+        linewidth=.2,
+        legend=False,
+    )
+    ax.invert_xaxis()
+    plt.axis('off')
+    plt.savefig(f"data/output/plots/{figname}.jpeg", dpi=300, format='jpeg')
+    plt.close()

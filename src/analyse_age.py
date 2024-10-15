@@ -7,8 +7,9 @@ import matplotlib.pyplot as plt
 
 from src.connectors import Connection
 from src.utils import (
-    parse_mindat, classify_by_rarity
+    parse_mindat, classify_by_rarity, get_outliers
 )
+from src.plots import timeline
 
 api = Connection()
 api.connect_db()
@@ -80,6 +81,22 @@ phanerozoic_report.to_csv('data/output/data/mineral_locality_phanerozoic_summary
 archean = pd.read_csv('data/output/data/mineral_locality_archean.csv', sep=',', encoding='utf-8')
 proterozoic = pd.read_csv('data/output/data/mineral_locality_proterozoic.csv', sep=',', encoding='utf-8')
 phanerozoic = pd.read_csv('data/output/data/mineral_locality_phanerozoic.csv', sep=',', encoding='utf-8')
+
+
+# Construct single timelines with outliers
+AGE_THRESHOLD = 50
+_data = get_outliers(archean, 'max_age', AGE_THRESHOLD)
+timeline(_data, 'max_age', '4.2', { 'binwidth': 20 })
+
+_data = get_outliers(proterozoic, 'max_age', AGE_THRESHOLD)
+timeline(_data, 'max_age', '4.3', { 'binwidth': 20 })
+
+_data = get_outliers(phanerozoic, 'max_age', AGE_THRESHOLD)
+timeline(_data, 'max_age', '4.4', { 'binwidth': 7 })
+
+_full = pd.concat([archean, proterozoic, phanerozoic])
+_data = get_outliers(_full, 'max_age', AGE_THRESHOLD)
+timeline(_data, 'max_age', '4.1', { 'binwidth': 30 })
 
 
 # Archean timeline grouped by rarity
@@ -155,40 +172,6 @@ for i, rarity_group in enumerate(phanerozoic.rarity_group.unique()):
 
 plt.tight_layout()
 plt.savefig("data/output/plots/timeline_phanerozoic_by_rarity.jpeg", dpi=300, format='jpeg')
-
-
-sns.set_theme(style="ticks")
-fig, ax = plt.subplots(figsize=(7, 5), dpi=300)
-sns.despine(fig)
-
-g = sns.histplot(
-    mineral_locality_tuple.sort_values(by='rarity_group'),
-    x="max_age",
-    hue='rarity_group',
-    palette="rocket",
-    edgecolor=".3",
-    ax=ax,
-    linewidth=.5,
-    binwidth=30,
-    multiple="stack",
-)
-g.legend_.set_title('Rarity Groups')
-plt.xlabel('Age (Ma)')
-plt.ylabel('Mineral count')
-
-ax_ = ax.twinx()
-sns.kdeplot(
-    data=mineral_locality_tuple,
-    x="max_age",
-    palette=['darkblue',],
-    ax=ax_,
-    linewidth=.2,
-    legend=False
-)
-ax.invert_xaxis()
-plt.axis('off')
-plt.savefig(f"data/output/plots/timeline.jpeg", dpi=300, format='jpeg')
-plt.close()
 
 
 # timeline faceted for top 10 most common carbonates
