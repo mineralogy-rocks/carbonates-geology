@@ -17,6 +17,7 @@ api.fetch_tables()
 api.get_minerals()
 api.disconnect_db()
 
+
 localities = pd.read_csv('data/input/mindat_locs.csv')
 localities = parse_mindat(localities)
 _locality_age = pd.read_csv('data/input/tbl_locality_age_cache_alt.csv', on_bad_lines='skip', encoding='unicode_escape',
@@ -81,6 +82,32 @@ phanerozoic_report.to_csv('data/output/data/mineral_locality_phanerozoic_summary
 archean = pd.read_csv('data/output/data/mineral_locality_archean.csv', sep=',', encoding='utf-8')
 proterozoic = pd.read_csv('data/output/data/mineral_locality_proterozoic.csv', sep=',', encoding='utf-8')
 phanerozoic = pd.read_csv('data/output/data/mineral_locality_phanerozoic.csv', sep=',', encoding='utf-8')
+
+
+# add new rows to archean based on max_age - min_age
+# eg if its 10-20 then add rows with age 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+# this is to make the timeline more accurate
+def expand_rows(df):
+    _rows = []
+    for index, row in df.iterrows():
+        _min, _max = int(row['min_age']), int(row['max_age'])
+        if _min == _max:
+            new_row = row.copy()
+            new_row['age'] = _min
+            _rows.append(new_row)
+        else:
+            for _age in range(_min, _max + 1):
+                new_row = row.copy()
+                new_row['age'] = _age
+                _rows.append(new_row)
+
+    _df = pd.DataFrame(_rows)
+    _df.drop(['min_age', 'max_age'], axis=1, inplace=True)
+    return _df
+
+_archean = expand_rows(archean)
+_archean = _archean.loc[_archean['age'] >= 2500]
+timeline(_archean, 'age', '4.2-expanded-age-ranges', { 'binwidth': 20 }, outliers=False)
 
 
 # Construct single timelines with outliers
@@ -221,3 +248,18 @@ stats = pd.DataFrame(mineral_age.groupby('mineral')['mineral'].count())
 stats.rename(columns={'mineral': 'counts'}, inplace=True)
 stats.sort_values('counts', ascending=False, inplace=True)
 stats.to_csv('data/output/data/mineral_age_counts.csv')
+
+
+# Join references context with minerals and prepare output for Archean outliers
+references = pd.read_csv('data/input/MED-ages-reordered-20200131.csv', on_bad_lines='skip', sep='\t')
+_locality_age = pd.read_csv('data/input/tbl_locality_age_cache_alt.csv', on_bad_lines='skip', encoding='unicode_escape',
+                            sep='\t', index_col='mindat_id')
+archean = pd.read_csv('data/output/data/mineral_locality_archean.csv', sep=',', encoding='utf-8')
+_archean = get_outliers(archean, 'max_age', AGE_THRESHOLD)
+_archean = _data.loc[_data['is_outlier']]
+_archean = _archean.merge(_locality_age, how='inner', left_on=['locality_longname', 'mineral'],
+                         right_on=['locality_longname', 'mineral_display_name'])
+
+_archean.merge(references, how='inner', left_on='min_age_ref_id', right_on='ref_id')
+
+_ = references.loc[references['mindat_id'] == 27328]

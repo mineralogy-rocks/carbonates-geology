@@ -1,0 +1,188 @@
+,id,mineral,min_age,max_age,locality_longname,rarity_group,is_outlier
+0,216,Ancylite-(Ce),541.0,2500.0,"Pilanesberg Alkaline Complex, Bojanala Platinum District, North West, South Africa",Ubiquitous,True
+1,239,Ankerite,541.0,2500.0,"Yinachang Fe-Cu-REE Deposit, Wuding Co., Chuxiong, Yunnan, China",Ubiquitous,True
+2,239,Ankerite,541.0,2500.0,"Bidjovagge Gold-copper Deposit, Kautokeino, Finnmark, Norway",Ubiquitous,True
+3,239,Ankerite,541.0,2500.0,"United Verde Mine (The Big Hole; Big Hole Property; Hull Mine; Hopewell Tunnel; Patented Claim 3480; Patented Claim 2812; Patented Claims 3348), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+4,239,Ankerite,1600.0,2500.0,"Zawar Mines, Udaipur, Udaipur District, Udaipur Division, Rajasthan, India",Ubiquitous,True
+7,239,Ankerite,2500.0,4000.0,"Kangaroo Caves Prospect, Panorama Area, Shaw River District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+8,239,Ankerite,2500.0,4000.0,"Sulphur Springs Prospect, Panorama Area, Shaw River District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+9,239,Ankerite,2500.0,4000.0,"Gossan Hill Cu-Zn Deposit, Golden Grove Mine, Yalgoo Shire, Western Australia, Australia",Ubiquitous,True
+10,239,Ankerite,2594.0,2727.0,"Mount Charlotte Gold Mine, Kalgoorlie-Boulder, Kalgoorlie-Boulder Shire, Western Australia, Australia",Ubiquitous,True
+22,239,Ankerite,2782.0,2969.0,"Gravelotte, Murchison Range, Limpopo, South Africa",Ubiquitous,True
+23,239,Ankerite,3040.0,3640.0,"Barberton, Ehlanzeni District, Mpumalanga, South Africa",Ubiquitous,True
+24,307,Aragonite,0.0,2709.0,"132 North Ni Mine (Mount Edwards Mine), Widgiemooltha, Coolgardie Shire, Western Australia, Australia",Ubiquitous,True
+25,307,Aragonite,0.0,4700.0,"Murchison Meteorite, Murchison, City Of Greater Shepparton, Victoria, Australia",Ubiquitous,True
+26,307,Aragonite,541.0,2500.0,"United Verde Extension Mine (Little Daisy Group Of Claims; Little Daisy Shaft; The UVX; The U.V.X. Property; Edith And Audrey Shafts), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+27,307,Aragonite,2512.82,2792.82,"Penokee Group, Ironwood, Gogebic Iron Range, Gogebic Co., Michigan, USA",Ubiquitous,True
+30,447,Azurite,0.0,2500.0,"Paratoo Copper Mine, Yunta, Olary Province, South Australia, Australia",Ubiquitous,True
+31,447,Azurite,541.0,2500.0,"Coronation Mine, Amisk Lake District, Saskatchewan, Canada",Ubiquitous,True
+32,447,Azurite,541.0,2500.0,"Samiuki Mine, Um Samiuki, Eastern Desert, Red Sea, Egypt",Ubiquitous,True
+33,447,Azurite,541.0,2500.0,"Bidjovagge Gold-copper Deposit, Kautokeino, Finnmark, Norway",Ubiquitous,True
+34,447,Azurite,541.0,2500.0,"United Verde Extension Mine (Little Daisy Group Of Claims; Little Daisy Shaft; The UVX; The U.V.X. Property; Edith And Audrey Shafts), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+35,447,Azurite,541.0,2500.0,"United Verde Mine (The Big Hole; Big Hole Property; Hull Mine; Hopewell Tunnel; Patented Claim 3480; Patented Claim 2812; Patented Claims 3348), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+36,447,Azurite,1491.0,2500.0,"Dongshengmiao Mine, Urad Rear Banner (Wulate Houqi), Bayan Nur League (Bayannao'er Prefecture), Inner Mongolia, China",Ubiquitous,True
+39,447,Azurite,2500.0,4000.0,"Gossan Hill Cu-Zn Deposit, Golden Grove Mine, Yalgoo Shire, Western Australia, Australia",Ubiquitous,True
+45,447,Azurite,3040.0,3640.0,"Barberton, Ehlanzeni District, Mpumalanga, South Africa",Ubiquitous,True
+46,447,Azurite,3117.0,3351.0,"Coppin Gap Cu-Mo Deposit (Spinifex Ridge), Bamboo Creek District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+54,687,Bismutite,19.0,2662.61,"Fremont Co., Wyoming, USA",Ubiquitous,True
+55,687,Bismutite,1363.0,3026.0,"Moly Hill Mine, La Motte, Abitibi RCM, Abitibi-TÃ©miscamingue, QuÃ©bec, Canada",Ubiquitous,True
+56,687,Bismutite,1600.0,2500.0,"Cummins City, North Park, Jackson Co., Colorado, USA",Ubiquitous,True
+57,687,Bismutite,2220.0,2918.0,"Wodgina Tantalite Mine (Wodgina Pegmatite; Main Tantalite Dyke), Wodgina, Abydos Station, Port Hedland Shire, Western Australia, Australia",Ubiquitous,True
+59,687,Bismutite,2550.0,2613.0,"Londonderry Li Deposit (Londonderry Feldspar Quarry; Fraser's Find; Frazer's Find; Scahill's Quarry), Nepean, Coolgardie Shire, Western Australia, Australia",Ubiquitous,True
+60,687,Bismutite,2823.0,2950.0,"Cooglegong Pegmatite Field, Shaw River District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+62,859,Calcite,0.0,2500.0,"Paratoo Copper Mine, Yunta, Olary Province, South Australia, Australia",Ubiquitous,True
+63,859,Calcite,0.0,4700.0,"Murchison Meteorite, Murchison, City Of Greater Shepparton, Victoria, Australia",Ubiquitous,True
+64,859,Calcite,541.0,2500.0,"Photo Lake Mine, Snow Lake, Snow Lake District, Manitoba, Canada",Ubiquitous,True
+65,859,Calcite,541.0,2500.0,"Macassa Mine, Kirkland Lake Township (Teck Township), Timiskaming District, Ontario, Canada",Ubiquitous,True
+66,859,Calcite,541.0,2500.0,"Coronation Mine, Amisk Lake District, Saskatchewan, Canada",Ubiquitous,True
+67,859,Calcite,541.0,2500.0,"Yinachang Fe-Cu-REE Deposit, Wuding Co., Chuxiong, Yunnan, China",Ubiquitous,True
+68,859,Calcite,541.0,2500.0,"Samiuki Mine, Um Samiuki, Eastern Desert, Red Sea, Egypt",Ubiquitous,True
+69,859,Calcite,541.0,2500.0,"PyhÃ¤salmi Mine, PyhÃ¤jÃ¤rvi, North Ostrobothnia, Finland",Ubiquitous,True
+70,859,Calcite,541.0,2500.0,"Al Hajar Mine, Mintaqah 'Asir, Saudi Arabia",Ubiquitous,True
+71,859,Calcite,541.0,2500.0,"Pilanesberg Mtn, Pilanesberg Alkaline Complex, Bojanala Platinum District, North West, South Africa",Ubiquitous,True
+72,859,Calcite,541.0,2500.0,"Boliden Mine (SkellefteÃ¥ Mine), Boliden, Skellefte Mining District, SkellefteÃ¥, VÃ¤sterbotten County, Sweden",Ubiquitous,True
+73,859,Calcite,541.0,2500.0,"United Verde Extension Mine (Little Daisy Group Of Claims; Little Daisy Shaft; The UVX; The U.V.X. Property; Edith And Audrey Shafts), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+74,859,Calcite,541.0,2500.0,"United Verde Mine (The Big Hole; Big Hole Property; Hull Mine; Hopewell Tunnel; Patented Claim 3480; Patented Claim 2812; Patented Claims 3348), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+75,859,Calcite,1491.0,2500.0,"Dongshengmiao Mine, Urad Rear Banner (Wulate Houqi), Bayan Nur League (Bayannao'er Prefecture), Inner Mongolia, China",Ubiquitous,True
+76,859,Calcite,1600.0,2500.0,"Sherritt Gordon Mine (Sherridon Mine), Sherridon District, Manitoba, Canada",Ubiquitous,True
+77,859,Calcite,1600.0,2500.0,"Black Angel Mine, Maarmorilik, Avannaata, Greenland, Denmark",Ubiquitous,True
+78,859,Calcite,1600.0,2500.0,"Zawar Mines, Udaipur, Udaipur District, Udaipur Division, Rajasthan, India",Ubiquitous,True
+79,859,Calcite,1810.0,2615.0,"SiilinjÃ¤rvi Mine, SiilinjÃ¤rvi, Northern Savonia, Finland",Ubiquitous,True
+80,859,Calcite,2110.0,2644.0,"Tanco Mine (Bernic Lake Mine), Bernic Lake, Lac-du-Bonnet Area, Manitoba, Canada",Ubiquitous,True
+81,859,Calcite,2180.0,2660.0,"Red Cross Lake Pegmatites, Red Cross Lake, Manitoba, Canada",Ubiquitous,True
+82,859,Calcite,2188.3,2608.3,"Stillwater Mine, Stillwater Complex, Nye, Stillwater Co., Montana, USA",Ubiquitous,True
+83,859,Calcite,2220.0,2918.0,"Wodgina Tantalite Mine (Wodgina Pegmatite; Main Tantalite Dyke), Wodgina, Abydos Station, Port Hedland Shire, Western Australia, Australia",Ubiquitous,True
+85,859,Calcite,2500.0,4000.0,"Panorama Area, Shaw River District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+86,859,Calcite,2500.0,4000.0,"Willroy Mine, Gemmell Township, Thunder Bay District, Ontario, Canada",Ubiquitous,True
+87,859,Calcite,2500.0,4000.0,"Hunter Mine, Abitibi-Ouest RCM, Abitibi-TÃ©miscamingue, QuÃ©bec, Canada",Ubiquitous,True
+88,859,Calcite,2500.0,4000.0,"Manitou-Barvue Mine (Golden Manitou Mine), Val D'Or, La VallÃ©e-de-l'Or RCM, Abitibi-TÃ©miscamingue, QuÃ©bec, Canada",Ubiquitous,True
+89,859,Calcite,2500.0,4000.0,"Sigma Mine (Sigma No. 1 Mine), Val D'Or, La VallÃ©e-de-l'Or RCM, Abitibi-TÃ©miscamingue, QuÃ©bec, Canada",Ubiquitous,True
+90,859,Calcite,2500.0,4000.0,"Selbaie Mine (Detour Mine), Baie-James, Nord-du-QuÃ©bec, QuÃ©bec, Canada",Ubiquitous,True
+91,859,Calcite,2512.82,2792.82,"Penokee Group, Ironwood, Gogebic Iron Range, Gogebic Co., Michigan, USA",Ubiquitous,True
+93,859,Calcite,2540.0,3009.0,"Tupertalik Mt., Isortoq Fjord (SÃ¸ndre Isortoq), Qeqqata, Greenland, Denmark",Ubiquitous,True
+97,859,Calcite,2560.0,2800.0,"Preissac Mine (Indian Mine), Preissac, Abitibi RCM, Abitibi-TÃ©miscamingue, QuÃ©bec, Canada",Ubiquitous,True
+100,859,Calcite,2594.0,2727.0,"Mount Charlotte Gold Mine, Kalgoorlie-Boulder, Kalgoorlie-Boulder Shire, Western Australia, Australia",Ubiquitous,True
+105,859,Calcite,2621.0,2696.0,"White River Property (White River Gold Occurrence), Bomby Township, Thunder Bay District, Ontario, Canada",Ubiquitous,True
+111,859,Calcite,2664.0,2724.0,"Lorraine Mine (Lorraine-Hinterland Mine), Latulipe-et-Gaboury, TÃ©miscamingue RCM, Abitibi-TÃ©miscamingue, QuÃ©bec, Canada",Ubiquitous,True
+114,859,Calcite,2683.0,2858.0,"Kuittila Prospect, Ilomantsi, North Karelia, Finland",Ubiquitous,True
+136,859,Calcite,2782.0,2969.0,"Gravelotte, Murchison Range, Limpopo, South Africa",Ubiquitous,True
+137,859,Calcite,2800.0,2932.0,"Sherlock Bay Deposit, Roebourne, Roebourne Shire, Western Australia, Australia",Ubiquitous,True
+138,859,Calcite,3050.0,3110.0,"New Consort Mine, Barberton, Ehlanzeni District, Mpumalanga, South Africa",Ubiquitous,True
+141,859,Calcite,4010.0,4330.0,"Ningqiang Meteorite (Ningqiang Carbonaceous Chondrite), Ningqiang Co., Hanzhong, Shaanxi, China",Ubiquitous,True
+142,859,Calcite,4480.0,4620.0,"Canyon Diablo Meteorite, Meteor Crater Area, Coconino Co., Arizona, USA",Ubiquitous,True
+144,934,Cerussite,65.0,3350.0,"Coppin Pool, Tom Price, Ashburton Shire, Western Australia, Australia",Ubiquitous,True
+145,934,Cerussite,541.0,2500.0,"Willow Creek District, San Miguel Co., New Mexico, USA",Ubiquitous,True
+146,934,Cerussite,1600.0,2500.0,"Coxco Deposit, Borroloola, McArthur River Area, Roper Gulf Region, Northern Territory, Australia",Ubiquitous,True
+147,934,Cerussite,1600.0,2500.0,"Pegmont Pb-Zn Deposit (Pegmont Mine), Selwyn District, Cloncurry Shire, Queensland, Australia",Ubiquitous,True
+148,934,Cerussite,2657.0,2860.0,"Kearsarge Mine (Kearsarge Group; Cliff Mine), Kearsarge Peak, Kearsarge District [1], Inyo Co., California, USA",Ubiquitous,True
+150,934,Cerussite,2858.0,2926.0,"Mount Sholl Mine, Karratha, Roebourne Shire, Western Australia, Australia",Ubiquitous,True
+151,934,Cerussite,3040.0,3640.0,"Barberton, Ehlanzeni District, Mpumalanga, South Africa",Ubiquitous,True
+154,1304,Dolomite,0.0,2500.0,"Paratoo Copper Mine, Yunta, Olary Province, South Australia, Australia",Ubiquitous,True
+155,1304,Dolomite,0.0,2709.0,"132 North Ni Mine (Mount Edwards Mine), Widgiemooltha, Coolgardie Shire, Western Australia, Australia",Ubiquitous,True
+156,1304,Dolomite,0.0,4000.0,"Otway Ni Deposit, Nullagine, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+157,1304,Dolomite,0.0,4700.0,"Murchison Meteorite, Murchison, City Of Greater Shepparton, Victoria, Australia",Ubiquitous,True
+158,1304,Dolomite,541.0,2500.0,"Jingemia Cave, Moora Shire, Western Australia, Australia",Ubiquitous,True
+159,1304,Dolomite,541.0,2500.0,"Yinachang Fe-Cu-REE Deposit, Wuding Co., Chuxiong, Yunnan, China",Ubiquitous,True
+160,1304,Dolomite,541.0,2500.0,"Outokumpu Cu-Co-Zn-Ni-Ag-Au Ore Field, North Karelia, Finland",Ubiquitous,True
+161,1304,Dolomite,541.0,2500.0,"PyhÃ¤salmi Mine, PyhÃ¤jÃ¤rvi, North Ostrobothnia, Finland",Ubiquitous,True
+162,1304,Dolomite,541.0,2500.0,"Vihanti Deposit (Lampinsaari Deposit; Isoaho Deposit), Raahe, North Ostrobothnia, Finland",Ubiquitous,True
+163,1304,Dolomite,541.0,2500.0,"MetsÃ¤monttu Mine, Kisko, Salo, Southwest Finland, Finland",Ubiquitous,True
+164,1304,Dolomite,541.0,2500.0,"Bidjovagge Gold-copper Deposit, Kautokeino, Finnmark, Norway",Ubiquitous,True
+165,1304,Dolomite,541.0,2500.0,"Al Masane Mine (Al Massane Mine), Mintaqah Najran, Saudi Arabia",Ubiquitous,True
+166,1304,Dolomite,541.0,2500.0,"Glenover Carbonatite, Thabazimbi, Waterberg District, Limpopo, South Africa",Ubiquitous,True
+167,1304,Dolomite,541.0,2500.0,"Boliden Mine (SkellefteÃ¥ Mine), Boliden, Skellefte Mining District, SkellefteÃ¥, VÃ¤sterbotten County, Sweden",Ubiquitous,True
+168,1304,Dolomite,541.0,2500.0,"RenstrÃ¶m Mine (Renstrom Mine), Boliden, Skellefte Mining District, SkellefteÃ¥, VÃ¤sterbotten County, Sweden",Ubiquitous,True
+169,1304,Dolomite,541.0,2500.0,"United Verde Mine (The Big Hole; Big Hole Property; Hull Mine; Hopewell Tunnel; Patented Claim 3480; Patented Claim 2812; Patented Claims 3348), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+170,1304,Dolomite,742.0,2706.0,"Channar Mine, Paraburdoo, Ashburton Shire, Western Australia, Australia",Ubiquitous,True
+171,1304,Dolomite,1491.0,2500.0,"Dongshengmiao Mine, Urad Rear Banner (Wulate Houqi), Bayan Nur League (Bayannao'er Prefecture), Inner Mongolia, China",Ubiquitous,True
+172,1304,Dolomite,1600.0,2500.0,"Coxco Deposit, Borroloola, McArthur River Area, Roper Gulf Region, Northern Territory, Australia",Ubiquitous,True
+173,1304,Dolomite,1600.0,2500.0,"Black Angel Mine, Maarmorilik, Avannaata, Greenland, Denmark",Ubiquitous,True
+174,1304,Dolomite,1600.0,2500.0,"Balaria Mine, Zawar Mines, Udaipur, Udaipur District, Udaipur Division, Rajasthan, India",Ubiquitous,True
+175,1304,Dolomite,1790.0,2770.0,"Mount Tom Price Mine, Tom Price, Ashburton Shire, Western Australia, Australia",Ubiquitous,True
+176,1304,Dolomite,1810.0,2615.0,"SiilinjÃ¤rvi Mine, SiilinjÃ¤rvi, Northern Savonia, Finland",Ubiquitous,True
+177,1304,Dolomite,2500.0,4000.0,"Sulphur Springs Prospect, Panorama Area, Shaw River District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+178,1304,Dolomite,2500.0,4000.0,"Gossan Hill Cu-Zn Deposit, Golden Grove Mine, Yalgoo Shire, Western Australia, Australia",Ubiquitous,True
+179,1304,Dolomite,2500.0,4000.0,"Selbaie Mine (Detour Mine), Baie-James, Nord-du-QuÃ©bec, QuÃ©bec, Canada",Ubiquitous,True
+180,1304,Dolomite,2540.0,3009.0,"Tupertalik Mt., Isortoq Fjord (SÃ¸ndre Isortoq), Qeqqata, Greenland, Denmark",Ubiquitous,True
+181,1304,Dolomite,2575.0,2816.0,"Hemlo Gold Deposit, Bomby Township, Thunder Bay District, Ontario, Canada",Ubiquitous,True
+182,1304,Dolomite,2594.0,2727.0,"Mount Charlotte Gold Mine, Kalgoorlie-Boulder, Kalgoorlie-Boulder Shire, Western Australia, Australia",Ubiquitous,True
+197,1304,Dolomite,2782.0,2969.0,"Gravelotte, Murchison Range, Limpopo, South Africa",Ubiquitous,True
+198,1304,Dolomite,2800.0,2932.0,"Sherlock Bay Deposit, Roebourne, Roebourne Shire, Western Australia, Australia",Ubiquitous,True
+199,1304,Dolomite,2800.0,3000.0,"Isua Belt, Nuuk (GodthÃ¥b), Sermersooq, Greenland, Denmark",Ubiquitous,True
+201,1304,Dolomite,3050.0,3110.0,"New Consort Mine, Barberton, Ehlanzeni District, Mpumalanga, South Africa",Ubiquitous,True
+203,1304,Dolomite,4010.0,4330.0,"Ningqiang Meteorite (Ningqiang Carbonaceous Chondrite), Ningqiang Co., Hanzhong, Shaanxi, China",Ubiquitous,True
+204,1662,Gaylussite,66.0,2647.0,"Inner Mongolia, China",Transitional,True
+207,1711,Glaukosphaerite,2810.0,2900.0,"Windarra Ni Mine (Mount Windarra; Windarra; Discovery Gossan; Poseidon Deposit), Laverton, Laverton Shire, Western Australia, Australia",Transitional,True
+208,1951,Huntite,0.0,2709.0,"132 North Ni Mine (Mount Edwards Mine), Widgiemooltha, Coolgardie Shire, Western Australia, Australia",Ubiquitous,True
+209,1951,Huntite,470.0,2500.0,"Cloncurry Shire, Queensland, Australia",Ubiquitous,True
+210,1969,Hydrocerussite,470.0,2500.0,"Cloncurry Shire, Queensland, Australia",Ubiquitous,True
+211,1993,Hydrozincite,1600.0,2500.0,"Coxco Deposit, Borroloola, McArthur River Area, Roper Gulf Region, Northern Territory, Australia",Ubiquitous,True
+213,2361,Leadhillite,470.0,2500.0,"Cloncurry Shire, Queensland, Australia",Ubiquitous,True
+214,2482,Magnesite,0.0,2709.0,"132 North Ni Mine (Mount Edwards Mine), Widgiemooltha, Coolgardie Shire, Western Australia, Australia",Ubiquitous,True
+215,2482,Magnesite,541.0,2500.0,"Outokumpu Cu-Co-Zn-Ni-Ag-Au Ore Field, North Karelia, Finland",Ubiquitous,True
+216,2482,Magnesite,541.0,2500.0,"Al Hajar Mine, Mintaqah 'Asir, Saudi Arabia",Ubiquitous,True
+217,2482,Magnesite,900.0,2700.0,"North-East District, Botswana",Ubiquitous,True
+218,2482,Magnesite,2579.0,2700.0,"Kadoma District, Mashonaland West, Zimbabwe",Ubiquitous,True
+219,2482,Magnesite,2584.0,2709.0,"Norseman, Dundas Shire, Western Australia, Australia",Ubiquitous,True
+220,2482,Magnesite,2594.0,2727.0,"Mount Charlotte Gold Mine, Kalgoorlie-Boulder, Kalgoorlie-Boulder Shire, Western Australia, Australia",Ubiquitous,True
+234,2482,Magnesite,2800.0,3000.0,"Isua Belt, Nuuk (GodthÃ¥b), Sermersooq, Greenland, Denmark",Ubiquitous,True
+238,2550,Malachite,0.0,2500.0,"Paratoo Copper Mine, Yunta, Olary Province, South Australia, Australia",Ubiquitous,True
+239,2550,Malachite,0.0,2500.0,"Jingemia Cave, Moora Shire, Western Australia, Australia",Ubiquitous,True
+240,2550,Malachite,65.0,3350.0,"Coppin Pool, Tom Price, Ashburton Shire, Western Australia, Australia",Ubiquitous,True
+241,2550,Malachite,541.0,2500.0,"Coronation Mine, Amisk Lake District, Saskatchewan, Canada",Ubiquitous,True
+242,2550,Malachite,541.0,2500.0,"Samiuki Mine, Um Samiuki, Eastern Desert, Red Sea, Egypt",Ubiquitous,True
+243,2550,Malachite,541.0,2500.0,"Bidjovagge Gold-copper Deposit, Kautokeino, Finnmark, Norway",Ubiquitous,True
+244,2550,Malachite,541.0,2500.0,"Al Masane Mine (Al Massane Mine), Mintaqah Najran, Saudi Arabia",Ubiquitous,True
+245,2550,Malachite,541.0,2500.0,"Antler Mine (Antler Gold Mine; Spuyten Duyvel Mine), Arrastra Mt., Hualapai District, Hualapai (Hualpai) Mts, Mohave Co., Arizona, USA",Ubiquitous,True
+246,2550,Malachite,541.0,2500.0,"United Verde Extension Mine (Little Daisy Group Of Claims; Little Daisy Shaft; The UVX; The U.V.X. Property; Edith And Audrey Shafts), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+247,2550,Malachite,541.0,2500.0,"United Verde Mine (The Big Hole; Big Hole Property; Hull Mine; Hopewell Tunnel; Patented Claim 3480; Patented Claim 2812; Patented Claims 3348), Jerome, Verde District, Black Hills (Black Hill Range), Yavapai Co., Arizona, USA",Ubiquitous,True
+248,2550,Malachite,541.0,2500.0,"Willow Creek District, San Miguel Co., New Mexico, USA",Ubiquitous,True
+249,2550,Malachite,1491.0,2500.0,"Dongshengmiao Mine, Urad Rear Banner (Wulate Houqi), Bayan Nur League (Bayannao'er Prefecture), Inner Mongolia, China",Ubiquitous,True
+253,2550,Malachite,2500.0,2800.0,"Tip Top Mine (North Coldstream Mine), Burchell Lake Area, Thunder Bay District, Ontario, Canada",Ubiquitous,True
+254,2550,Malachite,2500.0,4000.0,"Copper Gorge Prospect, Mount Edgar Station, Marble Bar, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+255,2550,Malachite,2500.0,4000.0,"Sulphur Springs Prospect, Panorama Area, Shaw River District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+256,2550,Malachite,2500.0,4000.0,"Gossan Hill Cu-Zn Deposit, Golden Grove Mine, Yalgoo Shire, Western Australia, Australia",Ubiquitous,True
+257,2550,Malachite,2500.0,4000.0,"Raiville Mine (Dunraine Mine), Val D'Or, La VallÃ©e-de-l'Or RCM, Abitibi-TÃ©miscamingue, QuÃ©bec, Canada",Ubiquitous,True
+258,2550,Malachite,2512.82,2792.82,"Ironwood, Gogebic Iron Range, Gogebic Co., Michigan, USA",Ubiquitous,True
+259,2550,Malachite,2594.0,2727.0,"Mount Charlotte Gold Mine, Kalgoorlie-Boulder, Kalgoorlie-Boulder Shire, Western Australia, Australia",Ubiquitous,True
+260,2550,Malachite,2595.0,2724.0,"Boddington Mine, Boddington, Boddington Shire, Western Australia, Australia",Ubiquitous,True
+266,2550,Malachite,2800.0,2932.0,"Sherlock Bay Deposit, Roebourne, Roebourne Shire, Western Australia, Australia",Ubiquitous,True
+267,2550,Malachite,3040.0,3640.0,"Barberton, Ehlanzeni District, Mpumalanga, South Africa",Ubiquitous,True
+268,2550,Malachite,3117.0,3351.0,"Coppin Gap Cu-Mo Deposit (Spinifex Ridge), Bamboo Creek District, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+275,2758,Monohydrocalcite,0.0,2500.0,"New Mexico, USA",Ubiquitous,True
+276,2831,Nahcolite,66.0,2647.0,"Inner Mongolia, China",Ubiquitous,True
+277,2935,Northupite,66.0,2647.0,"Inner Mongolia, China",Transitional,True
+279,2971,Olekminskite,541.0,2500.0,"Pilanesberg Alkaline Complex, Bojanala Platinum District, North West, South Africa",Transitional,True
+282,3120,Parisite-(Ce),541.0,2500.0,"Pilanesberg Alkaline Complex, Bojanala Platinum District, North West, South Africa",Ubiquitous,True
+283,3195,Phosgenite,65.0,3350.0,"Coppin Pool, Tom Price, Ashburton Shire, Western Australia, Australia",Ubiquitous,True
+284,3220,Pirssonite,66.0,2647.0,"Inner Mongolia, China",Transitional,True
+287,3383,Reevesite,0.0,4000.0,"Otway Ni Deposit, Nullagine, East Pilbara Shire, Western Australia, Australia",Transitional,True
+289,3383,Reevesite,4480.0,4620.0,"Canyon Diablo Meteorite, Meteor Crater Area, Coconino Co., Arizona, USA",Transitional,True
+290,3406,Rhodochrosite,541.0,2500.0,"Samiuki Mine, Um Samiuki, Eastern Desert, Red Sea, Egypt",Ubiquitous,True
+291,3406,Rhodochrosite,541.0,2500.0,"Pilanesberg Alkaline Complex, Bojanala Platinum District, North West, South Africa",Ubiquitous,True
+292,3406,Rhodochrosite,669.0,3411.0,"Gogebic Co., Michigan, USA",Ubiquitous,True
+293,3406,Rhodochrosite,2110.0,2644.0,"Tanco Mine (Bernic Lake Mine), Bernic Lake, Lac-du-Bonnet Area, Manitoba, Canada",Ubiquitous,True
+294,3406,Rhodochrosite,2180.0,2660.0,"Red Cross Lake Pegmatites, Red Cross Lake, Manitoba, Canada",Ubiquitous,True
+297,3447,Rosasite,65.0,3350.0,"Coppin Pool, Tom Price, Ashburton Shire, Western Australia, Australia",Ubiquitous,True
+298,3447,Rosasite,470.0,2500.0,"Cloncurry Shire, Queensland, Australia",Ubiquitous,True
+300,3647,Siderite,0.0,2500.0,"Paratoo Copper Mine, Yunta, Olary Province, South Australia, Australia",Ubiquitous,True
+301,3647,Siderite,0.0,2709.0,"132 North Ni Mine (Mount Edwards Mine), Widgiemooltha, Coolgardie Shire, Western Australia, Australia",Ubiquitous,True
+302,3647,Siderite,0.0,4000.0,"Otway Ni Deposit, Nullagine, East Pilbara Shire, Western Australia, Australia",Ubiquitous,True
+303,3647,Siderite,541.0,2500.0,"Yinachang Fe-Cu-REE Deposit, Wuding Co., Chuxiong, Yunnan, China",Ubiquitous,True
+304,3647,Siderite,541.0,2500.0,"Antler Mine (Antler Gold Mine; Spuyten Duyvel Mine), Arrastra Mt., Hualapai District, Hualapai (Hualpai) Mts, Mohave Co., Arizona, USA",Ubiquitous,True
+305,3647,Siderite,1491.0,2500.0,"Dongshengmiao Mine, Urad Rear Banner (Wulate Houqi), Bayan Nur League (Bayannao'er Prefecture), Inner Mongolia, China",Ubiquitous,True
+306,3647,Siderite,1600.0,2500.0,"Sherritt Gordon Mine (Sherridon Mine), Sherridon District, Manitoba, Canada",Ubiquitous,True
+307,3647,Siderite,1600.0,2500.0,"Zawar Mines, Udaipur, Udaipur District, Udaipur Division, Rajasthan, India",Ubiquitous,True
+309,3647,Siderite,2500.0,4000.0,"Gossan Hill Cu-Zn Deposit, Golden Grove Mine, Yalgoo Shire, Western Australia, Australia",Ubiquitous,True
+324,3647,Siderite,2782.0,2969.0,"Gravelotte, Murchison Range, Limpopo, South Africa",Ubiquitous,True
+325,3647,Siderite,3067.0,3254.0,"Bangur Gabbro, Baula Complex, Odisha, India",Ubiquitous,True
+326,3688,Smithsonite,1.5,2500.0,"Komdok Mine, Sindong-ni, Puktuil-myon, Tanchon-gun, South Hamgyong Province, North Korea",Ubiquitous,True
+327,3688,Smithsonite,470.0,2500.0,"Cloncurry Shire, Queensland, Australia",Ubiquitous,True
+328,3688,Smithsonite,541.0,2500.0,"Antler Mine (Antler Gold Mine; Spuyten Duyvel Mine), Arrastra Mt., Hualapai District, Hualapai (Hualpai) Mts, Mohave Co., Arizona, USA",Ubiquitous,True
+329,3688,Smithsonite,541.0,2500.0,"Willow Creek District, San Miguel Co., New Mexico, USA",Ubiquitous,True
+330,3688,Smithsonite,2220.0,2918.0,"Wodgina Tantalite Mine (Wodgina Pegmatite; Main Tantalite Dyke), Wodgina, Abydos Station, Port Hedland Shire, Western Australia, Australia",Ubiquitous,True
+335,3784,Stichtite,2782.0,2906.0,"Murchison Mine, Gravelotte, Murchison Range, Limpopo, South Africa",Transitional,True
+337,3805,Strontianite,541.0,2500.0,"Pilanesberg Mtn, Pilanesberg Alkaline Complex, Bojanala Platinum District, North West, South Africa",Ubiquitous,True
+338,3805,Strontianite,1810.0,2615.0,"SiilinjÃ¤rvi Mine, SiilinjÃ¤rvi, Northern Savonia, Finland",Ubiquitous,True
+341,3938,Thermonatrite,66.0,2647.0,"Inner Mongolia, China",Ubiquitous,True
+342,4380,Zabuyelite,2110.0,2644.0,"Tanco Mine (Bernic Lake Mine), Bernic Lake, Lac-du-Bonnet Area, Manitoba, Canada",Transitional,True

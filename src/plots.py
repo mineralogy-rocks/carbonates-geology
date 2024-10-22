@@ -42,7 +42,7 @@ for name, period in periods:
     )
     plt.xlabel('Age (Ma)')
     plt.ylabel('Mineral counts')
-    plt.legend(handles=g.legend_.legendHandles, labels=choices.TOP_10_CARBONATES, fontsize='small', fancybox=False, framealpha=0.2)
+    plt.legend(handles=g.legend_.legend_handles, labels=choices.TOP_10_CARBONATES, fontsize='small', fancybox=False, framealpha=0.2)
     plt.tight_layout()
     ax.invert_xaxis()
     ax.set_title(f"Counts of top-10 carbonates in {name}", fontsize='small')
@@ -70,7 +70,7 @@ plt.xlabel('Age (Ma)')
 plt.ylabel('Density')
 plt.tight_layout()
 plt.legend(
-    handles=g.legend_.legendHandles,
+    handles=g.legend_.legend_handles,
     labels=choices.TOP_10_CARBONATES,
     fontsize='small',
     fancybox=False,
@@ -221,7 +221,7 @@ plt.savefig(f"data/output/plots/timeline-all.jpeg", dpi=300, format='jpeg')
 
 
 
-def timeline(data, colname, figname, configs={ 'binwidth': 30 }):
+def timeline(data, colname, figname, configs={ 'binwidth': 30 }, outliers=True):
     # single timeline with rarity stacked bars
     outlier_colname = 'is_outlier'
 
@@ -231,22 +231,22 @@ def timeline(data, colname, figname, configs={ 'binwidth': 30 }):
 
     _min, _max = data[colname].min(), data[colname].max()
 
-    # Outliers (in the background)
-    _outliers = data[data[outlier_colname]]
-    sns.histplot(
-        _outliers,
-        x=colname,
-        color='grey',
-        edgecolor="black",
-        ax=ax,
-        linewidth=0.1,
-        alpha=0.3,
-        binrange=(_min, _max),
-        **configs
-    )
+    if outliers:
+        # Outliers (in the background)
+        sns.histplot(
+            data,
+            x=colname,
+            color='grey',
+            edgecolor="black",
+            ax=ax,
+            linewidth=0.1,
+            alpha=0.3,
+            binrange=(_min, _max),
+            **configs
+        )
 
     # Reliable data without outliers (in the foreground)
-    _data = data[~data[outlier_colname]]
+    _data = data[data[outlier_colname]] if outliers else data
     g_regular = sns.histplot(
         _data.sort_values(by='rarity_group'),
         x=colname,
