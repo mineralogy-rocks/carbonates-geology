@@ -6,6 +6,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 from src.connectors import Connection
+from src import choices as choices
 from src.utils import (
     parse_mindat, classify_by_rarity, get_outliers
 )
@@ -84,45 +85,18 @@ proterozoic = pd.read_csv('data/output/data/mineral_locality_proterozoic.csv', s
 phanerozoic = pd.read_csv('data/output/data/mineral_locality_phanerozoic.csv', sep=',', encoding='utf-8')
 
 
-# add new rows to archean based on max_age - min_age
-# eg if its 10-20 then add rows with age 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-# this is to make the timeline more accurate
-def expand_rows(df):
-    _rows = []
-    for index, row in df.iterrows():
-        _min, _max = int(row['min_age']), int(row['max_age'])
-        if _min == _max:
-            new_row = row.copy()
-            new_row['age'] = _min
-            _rows.append(new_row)
-        else:
-            for _age in range(_min, _max + 1):
-                new_row = row.copy()
-                new_row['age'] = _age
-                _rows.append(new_row)
-
-    _df = pd.DataFrame(_rows)
-    _df.drop(['min_age', 'max_age'], axis=1, inplace=True)
-    return _df
-
-_archean = expand_rows(archean)
-_archean = _archean.loc[_archean['age'] >= 2500]
-timeline(_archean, 'age', '4.2-expanded-age-ranges', { 'binwidth': 20 }, outliers=False)
-
-
 # Construct single timelines with outliers
-AGE_THRESHOLD = 50
-_data = get_outliers(archean, 'max_age', AGE_THRESHOLD)
+_data = get_outliers(archean, 'max_age', choices.AGE_THRESHOLD)
 timeline(_data, 'max_age', '4.2', { 'binwidth': 20 })
 
-_data = get_outliers(proterozoic, 'max_age', AGE_THRESHOLD)
+_data = get_outliers(proterozoic, 'max_age', choices.AGE_THRESHOLD)
 timeline(_data, 'max_age', '4.3', { 'binwidth': 20 })
 
-_data = get_outliers(phanerozoic, 'max_age', AGE_THRESHOLD)
+_data = get_outliers(phanerozoic, 'max_age', choices.AGE_THRESHOLD)
 timeline(_data, 'max_age', '4.4', { 'binwidth': 7 })
 
 _full = pd.concat([archean, proterozoic, phanerozoic])
-_data = get_outliers(_full, 'max_age', AGE_THRESHOLD)
+_data = get_outliers(_full, 'max_age', choices.AGE_THRESHOLD)
 timeline(_data, 'max_age', '4.1', { 'binwidth': 30 })
 
 
@@ -261,5 +235,4 @@ _archean = _archean.merge(_locality_age, how='inner', left_on=['locality_longnam
                          right_on=['locality_longname', 'mineral_display_name'])
 
 _archean.merge(references, how='inner', left_on='min_age_ref_id', right_on='ref_id')
-
 _ = references.loc[references['mindat_id'] == 27328]

@@ -1,52 +1,106 @@
 # -*- coding: UTF-8 -*-
 import pandas as pd
-import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 from src import choices as choices
+from src.utils import get_outliers
 
 
 archean = pd.read_csv('data/output/data/mineral_locality_archean.csv', sep=',', encoding='utf-8')
 proterozoic = pd.read_csv('data/output/data/mineral_locality_proterozoic.csv', sep=',', encoding='utf-8')
 phanerozoic = pd.read_csv('data/output/data/mineral_locality_phanerozoic.csv', sep=',', encoding='utf-8')
 
-periods = (
-    ('Archean', archean),
-    ('Proterozoic', proterozoic),
-    ('Phanerozoic', phanerozoic)
-)
+archean = get_outliers(archean, 'max_age', choices.AGE_THRESHOLD)
+proterozoic = get_outliers(proterozoic, 'max_age', choices.AGE_THRESHOLD)
+phanerozoic = get_outliers(phanerozoic, 'max_age', choices.AGE_THRESHOLD)
 
-_counts = phanerozoic[phanerozoic.mineral.isin(choices.TOP_10_CARBONATES)].sort_values(by='mineral')
-_counts = _counts.groupby(['mineral', 'max_age']).size().reset_index(name='counts').sort_values(by='max_age')
-_counts.to_csv('data/output/data/top-10-carbonates-phanerozoic.csv', sep=',', encoding='utf-8', index=False)
+archean = archean[~archean.is_outlier]
+proterozoic = proterozoic[~proterozoic.is_outlier]
+phanerozoic = phanerozoic[~phanerozoic.is_outlier]
+data = pd.concat([archean, proterozoic, phanerozoic])
 
-# single bar chart per period: counts of top-10 carbonates
-for name, period in periods:
-    _counts = period[period.mineral.isin(choices.TOP_10_CARBONATES)].sort_values(by='mineral')
-    sns.set_theme(style="ticks")
-    fig, ax = plt.subplots(figsize=(7, 5), dpi=300)
-    sns.despine(fig)
-    g = sns.histplot(
-        _counts,
-        x="max_age",
-        hue="mineral",
-        palette="Paired",
-        edgecolor=".3",
-        ax=ax,
-        linewidth=.5,
-        binwidth=30,
-        multiple="stack",
-        hue_order=choices.TOP_10_CARBONATES,
-    )
-    plt.xlabel('Age (Ma)')
-    plt.ylabel('Mineral counts')
-    plt.legend(handles=g.legend_.legend_handles, labels=choices.TOP_10_CARBONATES, fontsize='small', fancybox=False, framealpha=0.2)
-    plt.tight_layout()
-    ax.invert_xaxis()
-    ax.set_title(f"Counts of top-10 carbonates in {name}", fontsize='small')
-    plt.savefig(f"data/output/plots/{name.lower()}_counts.jpeg", dpi=300, format='jpeg')
+color_palette = sns.color_palette("Paired", n_colors=len(choices.TOP_10_CARBONATES) + 1)
+color_dict = dict(zip(choices.TOP_10_CARBONATES + ['Other'], color_palette))
+
+# Minerals counts pie charts
+for name, _min, _max in choices.PERIODS:
+    _plot_name = name.lower().replace(' ', '-')
+
+    # Filter data for the period
+    _data = data[(data.max_age >= _max) & (data.max_age <= _min)]
+
+    # Group all non-top-10 carbonates as 'Other'
+    _data.loc[~_data.mineral.isin(choices.TOP_10_CARBONATES), 'mineral'] = 'Other'
+
+    # Calculate counts
+    _counts = _data.groupby('mineral').size().reset_index(name='count')
+
+    # Create a complete DataFrame with all possible minerals
+    all_minerals = pd.DataFrame({'mineral': choices.TOP_10_CARBONATES + ['Other']})
+    _counts = all_minerals.merge(_counts, on='mineral', how='left').fillna(0)
+
+    # Create the pie chart
+    plt.figure(figsize=(10, 8), dpi=300)
+
+    # Only plot non-zero values
+    mask = _counts['count'] > 0
+
+    plt.pie(_counts.loc[mask, 'count'],
+            labels=_counts.loc[mask, 'mineral'],
+            autopct='%1.1f%%',
+            colors=[color_dict[m] for m in _counts.loc[mask, 'mineral']],
+            wedgeprops={'linewidth': 1, 'edgecolor': 'white'},
+            pctdistance=0.85)
+
+    plt.title(f"Distribution of Carbonate Minerals in {name}", pad=20)
+
+    # Add legend with all minerals for consistency
+    handles = [plt.Rectangle((0, 0), 1, 1, fc=color_dict[m]) for m in choices.TOP_10_CARBONATES + ['Other']]
+    plt.legend(handles,
+               choices.TOP_10_CARBONATES + ['Other'],
+               bbox_to_anchor=(1.05, 1),
+               loc='upper left',
+               borderaxespad=0.,
+               fontsize='small')
+
+    # Ensure the pie chart is circular
+    plt.axis('equal')
+
+    # Save the plot with extended boundary to accommodate legend
+    plt.savefig(f"data/output/plots/{_plot_name}-mineral-pie.jpeg",
+                dpi=300,
+                format='jpeg',
+                bbox_inches='tight')
+    plt.close()
+
+
+# Rarity pie charts
+for name, _min, _max in choices.PERIODS:
+    _plot_name = name.lower().replace(' ', '-')
+
+    _data = data[(data.max_age >= _max) & (data.max_age <= _min)]
+
+    _counts = _data.groupby(['mineral', 'rarity_group']).size().reset_index(name='count')
+    _rarity_counts = _counts.groupby('rarity_group')['count'].sum().reset_index()
+
+    plt.figure(figsize=(8, 8), dpi=300)
+
+    plt.pie(_rarity_counts['count'],
+            labels=_rarity_counts['rarity_group'],
+            autopct='%1.1f%%',
+            colors=sns.color_palette("Paired"),
+            wedgeprops={'linewidth': 1, 'edgecolor': 'white'})
+
+    plt.title(f"Distribution of Minerals by Rarity Groups in {name}", pad=20)
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
+
+    plt.axis('equal')
+    plt.savefig(f"data/output/plots/{_plot_name}_rarity_pie.jpeg",
+                dpi=300,
+                format='jpeg',
+                bbox_inches='tight')
     plt.close()
 
 
