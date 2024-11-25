@@ -1,12 +1,20 @@
-,rarity_group,counts,period
-0,Generally Rare,3,Archean
-1,Transitional,12,Archean
-2,Ubiquitous,26,Archean
-0,Endemic,3,Proterozoic
-1,Generally Rare,19,Proterozoic
-2,Transitional,53,Proterozoic
-3,Ubiquitous,42,Proterozoic
-0,Endemic,16,Phanerozoic
-1,Generally Rare,27,Phanerozoic
-2,Transitional,79,Phanerozoic
-3,Ubiquitous,43,Phanerozoic
+rarity_group,counts,period
+Transitional,1,Archean I
+Ubiquitous,8,Archean I
+Generally Rare,3,Archean II
+Transitional,8,Archean II
+Ubiquitous,14,Archean II
+Generally Rare,3,Proterozoic I
+Transitional,13,Proterozoic I
+Ubiquitous,27,Proterozoic I
+Generally Rare,2,Proterozoic II
+Transitional,23,Proterozoic II
+Ubiquitous,33,Proterozoic II
+Endemic,1,Phanerozoic I
+Generally Rare,3,Phanerozoic I
+Transitional,48,Phanerozoic I
+Ubiquitous,40,Phanerozoic I
+Endemic,9,Phanerozoic II
+Generally Rare,14,Phanerozoic II
+Transitional,45,Phanerozoic II
+Ubiquitous,41,Phanerozoic II
